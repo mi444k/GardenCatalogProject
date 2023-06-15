@@ -1,8 +1,8 @@
 # Final Tel-Ran FrontEnd Project
 
-## "Garden Catalov", [Figma v3.0](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4744-277&t=aN8AJv3Geyqmpdkk-0)
+## "Garden Catalog", [Figma v3.0](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4744-277&t=aN8AJv3Geyqmpdkk-0)
 
-### Author: Ilias Martis (group 40-41 FE)
+### Author: [Ilias Martis](mailto:ilias@martis.dev) (group 40-41 FE)
 
 ---
 
