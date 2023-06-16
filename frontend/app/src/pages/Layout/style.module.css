@@ -1,0 +1,5 @@
+.wrapper {
+  position: relative;
+  background-color: var(--main-bg-color);
+  padding: 0 38px;
+}

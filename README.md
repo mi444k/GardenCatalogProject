@@ -16,7 +16,7 @@ Frontend part was written by me personally from the beginning to the end using R
 
 ### Backend
 
-To start the Backend Server, go to the "backend" folder and run the following command:
+To start the Backend Server, go to the "backend/app" folder and run the following command:
 
 `npm i && npm run dev`
 
@@ -24,6 +24,6 @@ To start the Backend Server, go to the "backend" folder and run the following co
 
 ### Frontend
 
-To start the Frontend ReqctJS App, go to the "fronend" folder and run the following command:
+To start the Frontend ReqctJS App, go to the "fronend/app" folder and run the following command:
 
 `npm i && npm run start`
