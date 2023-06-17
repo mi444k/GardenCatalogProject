@@ -49,4 +49,4 @@ To start the Frontend ReqctJS App, go to the "fronend/app" folder and run the fo
 
 ---
 
-Then go to the link: <http://localhsot:34444>
+Then go to the link: <http://localhsot:3444>
