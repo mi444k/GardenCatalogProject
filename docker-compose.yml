@@ -9,7 +9,7 @@ services:
     container_name: frontend
     hostname: frontend
     ports:
-      - '3444:3000'
+      - 3444:3000
     volumes:
       - ./frontend/app:/app
       - /app/node_modules
