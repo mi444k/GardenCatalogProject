@@ -12,9 +12,28 @@ To implement this project the school provided the Backend Server, which is locat
 
 Frontend part was written by me personally from the beginning to the end using ReactJS library and additional components, and it is located in the folder "frontend".
 
+The project can be launched in two ways:
+
+- through Docker
+- each service manually
+
 ---
 
-### Backend
+## Docker
+
+To easy start a project with a Docker run the following command:
+
+`docker compose -f docker-compose.yml up --build -d`
+
+To stop the project, use the command:
+
+`docker compose -f docker-compose.yml down`
+
+---
+
+## Manually
+
+#### Backend
 
 To start the Backend Server, go to the "backend/app" folder and run the following command:
 
@@ -22,8 +41,12 @@ To start the Backend Server, go to the "backend/app" folder and run the followin
 
 ---
 
-### Frontend
+#### Frontend
 
 To start the Frontend ReqctJS App, go to the "fronend/app" folder and run the following command:
 
 `npm i && npm run start`
+
+---
+
+Then go to the link: <http://localhsot:34444>

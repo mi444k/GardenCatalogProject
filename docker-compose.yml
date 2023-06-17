@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  frontend:
+    restart: on-failure
+    build:
+      context: frontend
+      target: development
+    container_name: frontend
+    hostname: frontend
+    ports:
+      - '3444:3000'
+    volumes:
+      - ./frontend/app:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - default
+
+  backend:
+    restart: on-failure
+    build:
+      context: backend
+      target: development
+    container_name: backend
+    hostname: backend
+    ports:
+      - 3333:3333
+    volumes:
+      - ./backend/app:/app
+      - /app/node_modules
+    networks:
+      - default
+
+networks:
+  default:
+    name: garden-network
