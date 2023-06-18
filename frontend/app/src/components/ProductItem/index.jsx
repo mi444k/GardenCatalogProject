@@ -5,6 +5,7 @@ import { PriceBlock } from '../PriceBlock';
 import { useStore } from '../../store';
 
 export const ProductItem = ({ id, title, price, discont_price, image }) => {
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
   const nodeId = `card${id}${Date.now()}`;
   const { addToCart } = useStore();
 
@@ -37,7 +38,7 @@ export const ProductItem = ({ id, title, price, discont_price, image }) => {
   return (
     <NavLink to={`/product/${id}`} className={s.wrapper} id={nodeId}>
       <div className={s.image_block}>
-        <img className={s.image} src={`http://localhost:3333/${image}`} alt={title} />
+        <img className={s.image} src={`${API_URL}/${image}`} alt={title} />
         <div className={s.add_cart_btn} onClick={handleAddToCart}>
           Add to cart
         </div>

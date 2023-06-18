@@ -9,6 +9,7 @@ import { useStore } from '../../store';
 export const CartItem = ({ id, title, amount, price, discont_price, image }) => {
   const { minusProduct, plusProduct, deleteProduct } = useStore();
   const [style, setStyle] = useState(s.wrapper);
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
 
   const handleDeleteFromCart = () => {
     setStyle(`${s.wrapper} ${s.hide_block}`);
@@ -26,7 +27,7 @@ export const CartItem = ({ id, title, amount, price, discont_price, image }) => 
           <LuDelete />
         </div>
         <NavLink to={`/product/${id}`}>
-          <img src={`http://localhost:3333${image}`} className={s.image} alt={title} />
+          <img src={`${API_URL}/${image}`} className={s.image} alt={title} />
         </NavLink>
         <div>
           <NavLink to={`/product/${id}`}>{title}</NavLink>

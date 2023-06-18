@@ -6,6 +6,7 @@ import { PriceBlock } from '../../components/PriceBlock';
 import { fetchProducts } from '../../actions/asyncApi';
 
 export const SingleProductPage = () => {
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
   const { products, addToCart } = useStore();
   const navigate = useNavigate();
   const { pid } = useParams();
@@ -42,7 +43,7 @@ export const SingleProductPage = () => {
             </span>
           </div>
           <div className={s.wrapper}>
-            <img src={`http://localhost:3333${products[0].image}`} alt={products[0].title} />
+            <img src={`${API_URL}/${products[0].image}`} alt={products[0].title} />
             <div className={s.info_block}>
               <PriceBlock
                 {...{ price: products[0].price, discont_price: products[0].discont_price }}
