@@ -22,7 +22,7 @@ export const Header = () => {
         <NavLink to="/products">All products</NavLink>
         <NavLink to="/sales">All sales</NavLink>
       </nav>
-      <div className={s.cart}>
+      <div className={s.cart} id="cart_icon">
         <NavLink to="/cart">
           {cart.length > 0 ? <BsHandbagFill size={29} /> : <BsHandbag size={29} />}
           <div className={s.cart_count}>{cart.length}</div>

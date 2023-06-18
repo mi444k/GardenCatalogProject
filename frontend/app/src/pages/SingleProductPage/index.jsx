@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../../store';
 import s from './style.module.css';
 import { PriceBlock } from '../../components/PriceBlock';
@@ -7,10 +7,16 @@ import { fetchProducts } from '../../actions/asyncApi';
 
 export const SingleProductPage = () => {
   const { products, addToCart } = useStore();
+  const navigate = useNavigate();
   const { pid } = useParams();
 
   const handleAddToCart = () => {
     addToCart(products[0].id);
+  };
+
+  const handleGoBack = (e) => {
+    // e.preventDefault()
+    navigate(-1);
   };
 
   useEffect(() => {
@@ -29,7 +35,12 @@ export const SingleProductPage = () => {
         <h1>Product not found</h1>
       ) : (
         <>
-          <h1 className={s.title}>{products[0].title}</h1>
+          <div className={s.title_header}>
+            <h1 className={s.title}>{products[0].title}</h1>
+            <span onClick={handleGoBack} className={s.go_back_btn}>
+              {'<<< Go back'}
+            </span>
+          </div>
           <div className={s.wrapper}>
             <img src={`http://localhost:3333${products[0].image}`} alt={products[0].title} />
             <div className={s.info_block}>

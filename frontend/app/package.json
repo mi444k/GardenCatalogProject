@@ -17,10 +17,8 @@
     "zustand": "^4.3.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "PORT=3444 react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

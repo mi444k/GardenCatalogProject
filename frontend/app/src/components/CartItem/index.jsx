@@ -18,6 +18,7 @@ export const CartItem = ({ id, title, amount, price, discont_price, image }) => 
       clearTimeout(deleteTimer);
     };
   };
+
   return (
     <div className={style}>
       <div className={s.content}>

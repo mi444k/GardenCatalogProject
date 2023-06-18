@@ -5,8 +5,7 @@ import { useStore } from '../../store';
 import randomizeArray from '../../utils/randomizeArray';
 
 export const CategoriesContainer = ({ limit = 0, random = false }) => {
-  const store = useStore();
-  let categories = store.categories;
+  let { categories } = useStore();
 
   if (random === true) {
     categories = randomizeArray(categories);

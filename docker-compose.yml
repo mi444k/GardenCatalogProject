@@ -1,4 +1,5 @@
 version: '3.8'
+name: garden
 
 services:
   frontend:
@@ -6,13 +7,14 @@ services:
     build:
       context: frontend
       target: development
-    container_name: frontend
+    image: garden/frontend
+    container_name: garden-frontend
     hostname: frontend
     ports:
-      - 3444:3000
+      - 3444:3444
     volumes:
       - ./frontend/app:/app
-      - /app/node_modules
+      - frontendModulesVolume:/app/node_modules
     depends_on:
       - backend
     networks:
@@ -23,16 +25,21 @@ services:
     build:
       context: backend
       target: development
-    container_name: backend
+    image: garden/backend
+    container_name: garden-backend
     hostname: backend
     ports:
       - 3333:3333
     volumes:
       - ./backend/app:/app
-      - /app/node_modules
+      - backendModulesVolume:/app/node_modules
     networks:
       - default
 
 networks:
   default:
     name: garden-network
+
+volumes:
+  frontendModulesVolume:
+  backendModulesVolume:

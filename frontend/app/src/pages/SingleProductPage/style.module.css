@@ -71,3 +71,17 @@
 .description p:nth-child(1) {
   font-weight: 600;
 }
+
+.title_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.go_back_btn {
+  cursor: pointer;
+}
+
+.go_back_btn:hover {
+  color: var(--green-color);
+}

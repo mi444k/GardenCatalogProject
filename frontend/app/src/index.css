@@ -44,3 +44,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+a {
+  color: var(--main-text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--green-color);
+}

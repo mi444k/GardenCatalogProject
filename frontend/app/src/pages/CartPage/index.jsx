@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import s from './style.module.css';
+import s_item from '../../components/CartItem/style.module.css';
 import { useStore } from '../../store';
 import { CartItem } from '../../components/CartItem';
 import { InputPhone } from '../../components/InputPhone';
@@ -9,6 +10,17 @@ import { RiDeleteBack2Fill } from 'react-icons/ri';
 export const CartPage = () => {
   const { cart, clearCart, orderThisCart } = useStore();
   const [totalPrice, setTotalPrice] = useState();
+
+  const handleClearCart = () => {
+    console.log(
+      [...document.getElementById('cart_items_list').children].map((c) => c.classList.add(s_item.hide_block))
+    );
+    const deleteTimer = setTimeout(() => clearCart(), 500);
+
+    return () => {
+      clearTimeout(deleteTimer);
+    };
+  };
 
   const handleOrderAction = (e) => {
     e.preventDefault();
@@ -29,18 +41,18 @@ export const CartPage = () => {
           {cart.length === 0 ? (
             <h1>Cart is empty.</h1>
           ) : (
-            <>
+            <div id="cart_items_list">
               {cart.map((item) => (
                 <CartItem key={item.id} {...item} />
               ))}
-            </>
+            </div>
           )}
         </div>
         <div className={s.detail_block}>
           {cart.length === 0 ? <div className={s.detail_block_locker} /> : <></>}
           <h2>
             Order details
-            <div className={s.clear_cart} onClick={clearCart}>
+            <div className={s.clear_cart} onClick={handleClearCart}>
               <RiDeleteBack2Fill />
             </div>
           </h2>
