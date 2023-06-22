@@ -3,15 +3,15 @@ import Input from 'react-phone-number-input/input';
 import { useStore } from '../../store';
 
 export const InputPhone = ({ className }) => {
-  const { locale } = useStore();
+  const { locales } = useStore();
   const [phone, setPhone] = useState();
 
   useEffect(() => {
     const fetch = async () => {
-      setPhone(await locale?.country_calling_code);
+      setPhone(await locales?.country_calling_code);
     };
     fetch().catch(console.error);
-  }, [locale]);
+  }, [locales]);
   return (
     <Input
       className={className}

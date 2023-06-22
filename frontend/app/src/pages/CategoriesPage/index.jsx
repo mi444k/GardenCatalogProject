@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './style.module.css';
-import { CategoriesContainer } from '../../components/CategoriesContainer';
+import { CategoriesContainer } from '../../components/Categories/CategoriesContainer';
 
 export const CategoriesPage = () => {
   return (

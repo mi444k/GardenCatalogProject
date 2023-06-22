@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Layouts/Header';
+import { Footer } from '../../components/Layouts/Footer';
 import s from './style.module.css';
 import { ScrollToTop } from '../../components/ScrollToTop';
 import { Notifications } from '../../components/Notifications';

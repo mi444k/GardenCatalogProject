@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../../store';
 import s from './style.module.css';
-import { PriceBlock } from '../../components/PriceBlock';
+import { PriceBlock } from '../../components/Products/PriceBlock';
 import { fetchProducts } from '../../actions/asyncApi';
 
 export const SingleProductPage = () => {

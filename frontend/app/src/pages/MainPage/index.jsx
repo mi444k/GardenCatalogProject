@@ -4,8 +4,8 @@ import saleImage from '../../static/images/sale.png';
 import gnomeImage from '../../static/images/gnome.png';
 
 import s from './style.module.css';
-import { ProductsContainer } from '../../components/ProductsContainer';
-import { CategoriesContainer } from '../../components/CategoriesContainer';
+import { ProductsContainer } from '../../components/Products/ProductsContainer';
+import { CategoriesContainer } from '../../components/Categories/CategoriesContainer';
 import { InputPhone } from '../../components/InputPhone';
 
 export const MainPage = () => {

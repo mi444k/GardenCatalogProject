@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import s from './style.module.css';
 import { useParams } from 'react-router-dom';
 import { useStore } from '../../store';
-import { ProductsContainer } from '../../components/ProductsContainer';
+import { ProductsContainer } from '../../components/Products/ProductsContainer';
 
 export const ProductsPage = ({ filters }) => {
   const { categories } = useStore();

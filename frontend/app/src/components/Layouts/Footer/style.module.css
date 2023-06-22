@@ -1,0 +1,56 @@
+.wrapper {
+  margin-top: 48px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: self-start;
+  gap: 25px;
+}
+
+.map {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 525px;
+  border: 1px solid #ddd;
+}
+
+.contacts,
+.address_block {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+.address {
+  font-weight: lighter;
+}
+
+.contacts .tel {
+  font-size: 50px;
+}
+
+.social_networks {
+  display: flex;
+  gap: 25px;
+  margin: 33px 0;
+}
+
+.social_networks a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.social_networks a:nth-child(1):hover {
+  color: red;
+}
+
+.social_networks a:nth-child(2):hover {
+  color: green;
+}
+
+.social_networks a:nth-child(3):hover {
+  color: purple;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import s from './style.module.css';
-import { PriceBlock } from '../PriceBlock';
+import { PriceBlock } from '../Products/PriceBlock';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 import { LuDelete } from 'react-icons/lu';

@@ -1,0 +1,10 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 322px);
+  justify-content: space-between;
+  justify-items: stretch;
+  align-content: center;
+  align-items: stretch;
+  width: 100%;
+  gap: 25px;
+}

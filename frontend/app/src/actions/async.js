@@ -6,7 +6,8 @@ export const fetchLocales = async () => {
 
   try {
     const response = await fetch(url);
-    useStore.setState({ locales: await response.json() });
+    const data = await response.json();
+    useStore.setState({ locales: data });
   } catch (error) {
     return addError({ title: error.message, description: url });
   }

@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 25px;
+  width: 100%;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.full_price {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration-line: line-through;
+  color: var(--gray-color);
+}
+
+.discount {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--red-color);
+}

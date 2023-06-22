@@ -4,8 +4,8 @@ import s_item from '../../components/CartItem/style.module.css';
 import { useStore } from '../../store';
 import { CartItem } from '../../components/CartItem';
 import { InputPhone } from '../../components/InputPhone';
-import { FormatedCurrency } from '../../components/FormatedCurrency';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
+import { FormatedCurrency } from '../../components/Products/PriceBlock';
 
 export const CartPage = () => {
   const { cart, clearCart, orderThisCart } = useStore();
