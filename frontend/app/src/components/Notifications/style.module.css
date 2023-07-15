@@ -6,7 +6,7 @@
   flex-direction: column;
   width: 600px;
   gap: 25px;
-  padding: 10px 10px;
+  padding: 10px 0px;
   z-index: 9999;
 }
 
@@ -16,10 +16,10 @@
   flex-direction: column;
   gap: 15px;
   border: 1px solid var(--gray-color);
-  border-radius: 15px;
+  border-radius: 0 15px 15px 0;
   padding: 15px 30px;
-  color: var(--white-color);
-  background-color: var(--message-bg-color);
+  background: #fff;
+  background: linear-gradient(90deg, #fff 95%, var(--message-bg-color) 95%);
   opacity: 0.85;
 }
 
@@ -37,6 +37,7 @@
 }
 
 .close_btn {
+  color: var(--white-color);
   position: absolute;
   font-size: 18px;
   top: 5px;

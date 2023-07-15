@@ -1,6 +1,7 @@
 .sale_banner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 600px;
   background-color: #a1e2eb;
 }
@@ -19,6 +20,12 @@
 
 .sale_info p:nth-child(2) {
   font-size: 63px;
+}
+
+.sale_image {
+  width: 500px;
+  height:fit-content;
+  margin-right: 150px;
 }
 
 .sale_btn {

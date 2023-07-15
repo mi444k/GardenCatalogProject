@@ -13,9 +13,11 @@ export const ProductsContainer = ({
   initFiltersState = { discounted: false, minPrice: null, maxPrice: null, sorted: null, limit: null, category: null },
 }) => {
   const { products } = useStore();
+  
   const [showProducts, setShowProducts] = useState(products);
   const [filters, setFilters] = useState(initFiltersState);
   const [onlySale, setOnlySale] = useState(filters.discounted);
+
   const { cid } = useParams();
   const { pathname } = useResolvedPath();
 

@@ -10,10 +10,10 @@ export const createCartSlice = persist(
         const inCart = state.cart.find(({ id }) => id === iid);
         if (inCart) {
           inCart.amount++;
-          state.addMessage({ title: `1 x ${inCart.title}`, description: 'Added in your cart...' });
+          state.addMessage({ description: `1 x ${inCart.title}`, title: 'Added in your cart...' });
         } else {
           const item = state.products.find(({ id }) => id === iid);
-          state.addMessage({ title: `1 x ${item.title}`, description: 'Added in your cart...' });
+          state.addMessage({ description: `1 x ${item.title}`, title: 'Added in your cart...' });
           return { cart: [...state.cart, { ...item, amount: 1 }] };
         }
         return {};
@@ -47,11 +47,12 @@ export const createCartSlice = persist(
 
     orderThisCart: ({ phone }) =>
       set((state) => {
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
         const order = JSON.stringify({
           phone,
           cart: [...state.cart.map((item) => ({ id: item.id, amount: item.amount }))],
         });
-        fetch('http://localhost:3333/order/send', {
+        fetch(`${API_URL}/order/send`, {
           method: 'POST',
           body: order,
         })

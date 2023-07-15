@@ -29,7 +29,7 @@ export const MainPage = () => {
             Sale
           </NavLink>
         </div>
-        <img src={saleImage} alt="Sale: New season" />
+        <img src={saleImage} className={s.sale_image} alt="Sale: New season" />
       </div>
 
       <div className={s.categories_wrapper}>

@@ -13,22 +13,22 @@ export const ProductItem = ({ id, title, price, discont_price, image }) => {
     e.preventDefault();
     addToCart(id);
 
-    const img = e.target.parentNode.firstChild;
-    const coord = img.getBoundingClientRect();
-    const clone = img.cloneNode();
+    let clone = e.target.parentNode.parentNode;
+    const coord = clone.getBoundingClientRect();
+    clone = clone.cloneNode(true)
     clone.classList.add(s.copy);
 
     document.getElementById('root').appendChild(clone);
 
     requestAnimationFrame(function () {
       clone.style.scale = 0.01;
-      clone.style.left = `${657 + window.scrollX}px`;
-      clone.style.top = `${-715 + window.scrollY}px`;
+      clone.style.left = `${1300 + window.scrollX}px`;
+      clone.style.top = `${-170 + window.scrollY}px`;
     });
 
     clone.style.scale = 1;
-    clone.style.left = `${coord.left}px`;
-    clone.style.top = `${coord.top}px`;
+    clone.style.left = `${coord.left + window.scrollX}px`;
+    clone.style.top = `${coord.top + window.scrollY}px`;
 
     setTimeout(function () {
       clone.remove();

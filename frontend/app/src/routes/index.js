@@ -7,6 +7,7 @@ import { CartPage } from '../pages/CartPage';
 import { CategoriesPage } from '../pages/CategoriesPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { SingleProductPage } from '../pages/SingleProductPage';
+import { SuccesPage } from '../pages/SuccessPage';
 
 export const Router = () => {
   return (
@@ -23,6 +24,8 @@ export const Router = () => {
         <Route path="product/:pid" element={<SingleProductPage />} />
 
         <Route path="categories" element={<CategoriesPage />} />
+
+        <Route path="success" element={<SuccesPage />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Route>
