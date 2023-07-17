@@ -12,7 +12,8 @@ export const MainPage = () => {
   const onSubmitDiscountForm = async (e) => {
     e.preventDefault();
     const phone = e.target.phone.value?.replaceAll(' ', '') || '';
-    const resp = await fetch('http://localhost:3333/sale/send', {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
+    const resp = await fetch(`${API_URL}/sale/send`, {
       method: 'POST',
       body: JSON.stringify({ tel: phone }),
     });
