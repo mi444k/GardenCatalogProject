@@ -61,3 +61,14 @@
 .hide_block {
   left: -3000px;
 }
+
+@media (max-width: 480px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+  }
+}

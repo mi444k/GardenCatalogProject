@@ -49,3 +49,12 @@
   transform: translateX(-650px);
   transition: all 0.5s;
 }
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 420px;
+  }
+  .close_btn {
+    display: none;
+  }
+}

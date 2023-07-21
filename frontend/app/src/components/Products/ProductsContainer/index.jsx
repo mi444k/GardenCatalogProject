@@ -67,7 +67,7 @@ export const ProductsContainer = ({
     <>
       {showFilters && products.length > 0 ? (
         <form className={s.filters_wrapper} onReset={(e) => handleClearFilters(e)}>
-          <div>
+          <div className={s.price_filters}>
             <label>Price</label>
             <input
               onChange={handleChangeMinPrice}

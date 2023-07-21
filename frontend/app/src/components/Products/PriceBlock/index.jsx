@@ -9,12 +9,20 @@ export const FormatedCurrency = ({ value }) => {
 
   useEffect(() => {
     if (locales?.languages) {
-      setResult(
-        new Intl.NumberFormat(`${locales?.languages}-${locales?.country_code}`, {
-          style: 'currency',
-          currency: locales?.currency,
-        }).format(+value)
-      );
+      let lang = locales.languages.split(',')[0]
+      if (!lang.includes('-')) {
+        lang = `${lang}-${locales?.country_code}`
+      }
+      try {
+        setResult(
+          new Intl.NumberFormat(lang, {
+            style: 'currency',
+            currency: locales?.currency,
+          }).format(+value)
+        )
+      } catch (err) {
+        console.log(`Error: ${err}`)
+      }
     } else {
       setResult(`${Number.parseFloat(value).toFixed(2)} $`);
     }

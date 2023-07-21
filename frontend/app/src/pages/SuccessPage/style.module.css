@@ -14,3 +14,18 @@
   width: 768px;
   height: fit-content;
 }
+
+@media (max-width: 480px) {
+  .success_image, .wrapper {
+    width: 480px;
+  }
+
+  .wrapper h1 {
+    font-size: 36px;
+  }
+
+  .wrapper h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+}

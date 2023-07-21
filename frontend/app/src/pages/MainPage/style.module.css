@@ -50,8 +50,8 @@
 }
 
 .get_discount_wrapper {
+  padding: 20px;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   height: 476px;
   background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
@@ -137,4 +137,35 @@
   border: 1px solid var(--main-text-color);
   text-decoration: none;
   color: var(--main-text-color);
+}
+
+@media (max-width: 480px) {
+  .sale_banner {
+    flex-direction: column-reverse;
+    width: 480px;
+    height: auto;
+  }
+  
+  .sale_info {
+    display: none;
+  }
+    
+  .sale_btn {
+    margin: 20px 0;
+  }
+
+  .sale_image {
+    width: 404px;
+    height:fit-content;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .gnome_image {
+    display: none;
+  }
+  
+  .get_discount_title {
+    text-align: center;
+  }
 }

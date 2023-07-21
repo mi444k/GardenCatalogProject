@@ -30,7 +30,9 @@ export const MainPage = () => {
             Sale
           </NavLink>
         </div>
-        <img src={saleImage} className={s.sale_image} alt="Sale: New season" />
+        <NavLink to="sales">
+          <img src={saleImage} className={s.sale_image} alt="Sale: New season" />
+        </NavLink>
       </div>
 
       <div className={s.categories_wrapper}>
@@ -41,12 +43,12 @@ export const MainPage = () => {
           </NavLink>
         </div>
         <div className={s.categories_items}>
-          <CategoriesContainer limit={4} random={true} />
+          <CategoriesContainer limit={3} random={true} />
         </div>
       </div>
 
       <div className={s.get_discount_wrapper}>
-        <img src={gnomeImage} alt="Get discount" />
+        <img src={gnomeImage} className={s.gnome_image} alt="Get discount" />
         <div className={s.get_discount}>
           <span className={s.get_discount_title}>
             5% off
@@ -65,7 +67,7 @@ export const MainPage = () => {
         <ProductsContainer
           key={'top'}
           showFilters={false}
-          initFiltersState={{ limit: 4, sorted: 'random', discounted: true }}
+          initFiltersState={{ limit: 3, sorted: 'random', discounted: true }}
         />
       </div>
     </div>

@@ -43,7 +43,7 @@ export const SingleProductPage = () => {
             </span>
           </div>
           <div className={s.wrapper}>
-            <img src={`${API_URL}/${products[0].image}`} alt={products[0].title} />
+            <img className={s.product_image} src={`${API_URL}/${products[0].image}`} alt={products[0].title} />
             <div className={s.info_block}>
               <PriceBlock
                 {...{ price: products[0].price, discont_price: products[0].discont_price }}

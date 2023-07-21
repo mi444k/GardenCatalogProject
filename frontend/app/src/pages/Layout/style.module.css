@@ -1,5 +1,27 @@
 .wrapper {
   position: relative;
   background-color: var(--main-bg-color);
-  padding: 0 38px;
+  margin: 0 auto;
+}
+
+
+@media screen {
+  .wrapper {
+    padding: 0 40px;
+    width: 1280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 0px;
+    width: 767px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0px;
+    width: 480px;
+  }
 }
