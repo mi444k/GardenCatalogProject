@@ -70,7 +70,7 @@ nav a {
 
 .cart_count {
   position: absolute;
-  top: 32px;
+  top: 35px;
   left: 7px;
   font-size: 12px;
   display: flex;
@@ -80,6 +80,7 @@ nav a {
   height: 15px;
   border-radius: 15px;
   color: var(--white-color);
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {

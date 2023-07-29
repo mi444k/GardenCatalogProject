@@ -8,7 +8,7 @@ export const CategoryItem = ({ id, title, image }) => {
   return (
     <NavLink to={`/category/${id}`} className={s.card}>
       <img src={`${API_URL}/${image}`} alt={title} />
-      {title}
+      <div className={s.category_title}>{title}</div>
     </NavLink>
   );
 };

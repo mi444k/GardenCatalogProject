@@ -7,11 +7,17 @@ import s from './style.module.css';
 import { ProductsContainer } from '../../components/Products/ProductsContainer';
 import { CategoriesContainer } from '../../components/Categories/CategoriesContainer';
 import { InputPhone } from '../../components/InputPhone';
+import { isValidPhoneNumber } from 'react-phone-number-input'
+import { useStore } from '../../store';
 
 export const MainPage = () => {
+  const {addError} = useStore();
   const onSubmitDiscountForm = async (e) => {
     e.preventDefault();
     const phone = e.target.phone.value?.replaceAll(' ', '') || '';
+    if (!isValidPhoneNumber(phone)) {
+      return addError(`Invalid phone number: ${phone}`)
+    }
     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3333';
     const resp = await fetch(`${API_URL}/sale/send`, {
       method: 'POST',
