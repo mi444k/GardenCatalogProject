@@ -25,8 +25,12 @@ export const Footer = () => {
         </div>
         <div className={s.address_block}>
           <div style={{ fontWeight: '600' }}>Address</div>
-          <div className={s.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</div>
-          <div style={{ fontSize: '18px', paddingTop: '25px' }}>Working Hours:</div>
+          <div className={s.address}>
+            Linkstraße 2, 8 OG, 10785, Berlin, Deutschland
+          </div>
+          <div style={{ fontSize: '18px', paddingTop: '25px' }}>
+            Working Hours:
+          </div>
           <div style={{ fontSize: '24px' }}>24 hours a day</div>
         </div>
       </div>

@@ -69,6 +69,18 @@
   font-size: 26px;
 }
 
+.show_more_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .filters_wrapper {
     width: 480px;

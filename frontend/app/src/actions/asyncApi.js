@@ -20,18 +20,16 @@ export const fetchProducts = async (filters = {}) => {
   try {
     if (filters?.product) {
       url = `${API_URL}/products/${filters.product}`;
-      const response = await fetch(url);
-      data = await response.json();
     } else if (filters?.category) {
       url = `${API_URL}/categories/${filters.category}`;
-      const response = await fetch(url);
-      data = await response.json();
-      data = data.data;
-    } else {
-      const response = await fetch(url);
-      data = await response.json();
     }
-    useStore.setState({ products: filterProducts(data, filters) });
+    const response = await fetch(url);
+    data = await response.json();
+
+    if (filters?.category) data = data.data;
+
+    // useStore.setState({ products: filterProducts(data, filters) });
+    useStore.setState({ products: data });
   } catch (error) {
     addError({ title: error.message, description: url });
   }

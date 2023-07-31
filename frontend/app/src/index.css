@@ -34,7 +34,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 a {
@@ -52,7 +53,7 @@ a:hover {
     width: 1280px;
     font-weight: 500;
     font-size: 16px;
-    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -61,7 +62,7 @@ a:hover {
     overflow-x: hidden;
     font-weight: 500;
     font-size: 20px;
-    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -70,5 +71,5 @@ a:hover {
     overflow-x: hidden;
     font-weight: 500;
     font-size: 24px;
-    }
+  }
 }

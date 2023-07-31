@@ -10,23 +10,45 @@ import s from './style.module.css';
 
 export const ProductsContainer = ({
   showFilters = true,
-  initFiltersState = { discounted: false, minPrice: null, maxPrice: null, sorted: null, limit: null, category: null },
+  initFiltersState = {
+    discounted: false,
+    minPrice: null,
+    maxPrice: null,
+    sorted: null,
+    limit: null,
+    category: null,
+  },
 }) => {
   const { products } = useStore();
-  
-  const [showProducts, setShowProducts] = useState(products);
+
+  const [showProducts, setShowProducts] = useState([]);
+  const [showMoreBtn, setShowMoreBtn] = useState(false);
   const [filters, setFilters] = useState(initFiltersState);
   const [onlySale, setOnlySale] = useState(filters.discounted);
 
   const { cid } = useParams();
   const { pathname } = useResolvedPath();
 
+  const handleShowItemsCount = (e) => {
+    if (filters.limit < products.length) setFilters({...filters, limit: filters.limit + 9})
+  } 
+
   const handleChangeMinPrice = (e) => {
-    setFilters({ ...filters, minPrice: +e.target.value });
+    let minValue = +e.target.value;
+    if (minValue < 0) {
+      minValue = minValue * -1;
+      e.target.value = minValue;
+    }
+    setFilters({ ...filters, minPrice: minValue });
   };
 
   const handleChangeMaxPrice = (e) => {
-    setFilters({ ...filters, maxPrice: +e.target.value });
+    let maxValue = +e.target.value;
+    if (maxValue < 0) {
+      maxValue = maxValue * -1;
+      e.target.value = maxValue;
+    }
+    setFilters({ ...filters, maxPrice: maxValue });
   };
 
   const handleChangeDiscounted = () => {
@@ -49,6 +71,7 @@ export const ProductsContainer = ({
 
   useEffect(() => {
     if (!filters.discounted) filters.discounted = false;
+    if (!filters.limit) filters.limit = 9;
     const fetch = async () => {
       if (!isNaN(+cid)) {
         filters.category = +cid;
@@ -60,13 +83,16 @@ export const ProductsContainer = ({
   }, []);
 
   useEffect(() => {
+    setShowMoreBtn(filters.limit < products.length);
     setShowProducts(filterProducts(products, filters));
   }, [products, filters]);
 
   return (
     <>
       {showFilters && products.length > 0 ? (
-        <form className={s.filters_wrapper} onReset={(e) => handleClearFilters(e)}>
+        <form
+          className={s.filters_wrapper}
+          onReset={(e) => handleClearFilters(e)}>
           <div className={s.price_filters}>
             <label>Price</label>
             <input
@@ -88,19 +114,28 @@ export const ProductsContainer = ({
               name="maxPrice"
             />
           </div>
-          <div className={s.discounted_btn} onClick={handleChangeDiscounted}>
+          <div
+            className={s.discounted_btn}
+            onClick={handleChangeDiscounted}>
             <span>Discounted items </span>
             <div>{onlySale ? <CiDiscount1 /> : <IoEllipseOutline />}</div>
           </div>
           <div>
             <label>Sorted</label>
-            <select onChange={handleChangeSorting} id="sorting" name="sorting">
+            <select
+              onChange={handleChangeSorting}
+              id="sorting"
+              name="sorting">
               <option value="">by default</option>
               <option value="name">Name</option>
               <option value="price">Price</option>
             </select>
           </div>
-          <input className={s.clear_btn} type="reset" value="Clear" />
+          <input
+            className={s.clear_btn}
+            type="reset"
+            value="Clear"
+          />
         </form>
       ) : (
         <></>
@@ -108,8 +143,12 @@ export const ProductsContainer = ({
       {showProducts.length > 0 ? (
         <div className={s.categories_items}>
           {showProducts.map((elem) => (
-            <ProductItem key={elem.id} {...elem} />
+            <ProductItem
+              key={elem.id}
+              {...elem}
+            />
           ))}
+          {showMoreBtn ? <div onClick={handleShowItemsCount} className={s.show_more_btn}>Show more...</div> : <></>}
         </div>
       ) : (
         <h1>Products not found...</h1>
