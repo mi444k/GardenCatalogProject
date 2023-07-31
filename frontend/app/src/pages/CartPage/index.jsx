@@ -12,13 +12,11 @@ import { useNavigate } from 'react-router-dom';
 export const CartPage = () => {
   const { cart, clearCart, orderThisCart } = useStore();
   const [totalPrice, setTotalPrice] = useState();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleClearCart = () => {
-    console.log(
-      [...document.getElementById('cart_items_list').children].map((c) =>
-        c.classList.add(s_item.hide_block)
-      )
+    [...document.getElementById('cart_items_list').children].map((c) =>
+      c.classList.add(s_item.hide_block)
     );
     const deleteTimer = setTimeout(() => clearCart(), 500);
 
@@ -31,7 +29,7 @@ export const CartPage = () => {
     e.preventDefault();
     const phone = e.target.phone.value?.replaceAll(' ', '') || '';
     orderThisCart({ phone });
-    navigate('/success')
+    navigate('/success');
   };
 
   useEffect(() => {

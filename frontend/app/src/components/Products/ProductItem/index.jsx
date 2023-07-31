@@ -22,8 +22,8 @@ export const ProductItem = ({ id, title, price, discont_price, image }) => {
 
     requestAnimationFrame(function () {
       clone.style.scale = 0.01;
-      clone.style.left = `${1300 + window.scrollX}px`;
-      clone.style.top = `${-170 + window.scrollY}px`;
+      clone.style.left = `${window.scrollX + 1100}px`;
+      clone.style.top = `${-190 + window.scrollY}px`;
     });
 
     clone.style.scale = 1;
